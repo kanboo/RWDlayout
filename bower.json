@@ -1,0 +1,20 @@
+{
+  "name": "RWDlayout",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kanboo <wang.kanboo@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "^4.7.0"
+  }
+}

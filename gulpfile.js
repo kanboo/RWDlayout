@@ -40,6 +40,7 @@ gulp.task('copyHTML', function () {
     /* gulp.dest('輸出目標至某資料夾')› */
     return gulp.src('./source/**/*.html')
         .pipe(gulp.dest('./public/'))
+        .pipe(browserSync.stream());
 })
 
 
@@ -55,12 +56,12 @@ gulp.task('sass', function () {
     return gulp.src('./source/scss/**/*.scss')
         .pipe($.plumber()) //出錯不中斷，指令加在src後即可
         .pipe($.sourcemaps.init())
-        .pipe($.sass().on('error', $.sass.logError))  //單純編譯sass
-        //.pipe($.sass({
-        //    'includePaths': ['./bower_components/bootstrap-sass/assets/stylesheets',
-        //        './bower_components/components-font-awesome/scss'
-        //    ]
-        //}).on('error', $.sass.logError)) //有include Bootstrap-Sass、fontawesome
+        //.pipe($.sass().on('error', $.sass.logError))  //單純編譯sass
+        .pipe($.sass({
+           'includePaths': [//'./bower_components/bootstrap-sass/assets/stylesheets',
+               './bower_components/components-font-awesome/scss'
+           ]
+        }).on('error', $.sass.logError)) //有include Bootstrap-Sass、fontawesome
         //此時已編譯好 CSS
         .pipe($.postcss(plugins)) //自動為你的 CSS 補上前綴詞
         .pipe($.if(Options.env === "build", $.cleanCss())) //壓縮css
@@ -137,6 +138,7 @@ gulp.task('browser-sync', function () {
 gulp.task('watch', function () {
     //參數1：監控的資料夾；參數2：執行的任務
     //當監控資料夾有變更時，會立即執行任務
+    gulp.watch('./source/**/*.html', ['copyHTML']);
     gulp.watch('./source/scss/**/*.scss', ['sass']);
     gulp.watch('./source/js/**/*.js', ['babel']);
 });
@@ -152,7 +154,7 @@ gulp.task('deploy', function () {
 gulp.task('build', gulpSequence('clean', 'sass', 'icons', 'babel', 'vendorJs', 'image-min'))
 
 /* 將多個任務一起執行，任務default為gulp的預設名稱，所以執行時，只需打 gulp 即可。 */
-gulp.task('default', ['sass', 'icons', 'babel', 'vendorJs', 'image-min', 'browser-sync', 'watch'])
+gulp.task('default', ['copyHTML', 'sass', 'icons', 'babel', 'image-min', 'browser-sync', 'watch'])
 
 
 /* 總結 */
