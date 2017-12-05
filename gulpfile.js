@@ -154,7 +154,7 @@ gulp.task('deploy', function () {
 gulp.task('build', gulpSequence('clean', 'sass', 'icons', 'babel', 'vendorJs', 'image-min'))
 
 /* 將多個任務一起執行，任務default為gulp的預設名稱，所以執行時，只需打 gulp 即可。 */
-gulp.task('default', ['copyHTML', 'sass', 'icons', 'babel', 'image-min', 'browser-sync', 'watch'])
+gulp.task('default', ['copyHTML', 'sass', 'icons', 'babel', 'vendorJs', 'image-min', 'browser-sync', 'watch'])
 
 
 /* 總結 */

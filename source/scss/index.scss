@@ -9,6 +9,23 @@ body {
     font-size: 16px;
 }
 
+.hidden-xs {
+    display: block;
+}
+
+.visible-xs {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none;
+    }
+    .visible-xs {
+        display: block;
+    }
+}
+
 .warp {
     max-width: 1049px;
     margin: 0 auto;
@@ -32,27 +49,33 @@ body {
         #logo_w {
             margin-right: auto;
         }
-        ul {
-            display: inline-block;
+        .menu {
+            // display: inline-block;
+            li {
+                display: inline-block;
+                margin-left: 30px;
+            }
+            a {
+                display: inline-block;
+                width: 32px;
+                height: 21px;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            a:hover {
+                border-bottom: 3px solid #00cc99;
+            }
         }
-        li {
-            display: inline-block;
-            margin-left: 30px;
-        }
-        a {
-            display: inline-block;
-            width: 32px;
-            height: 21px;
+        .showmenu {
+            display: none;
+            font-size: 32px;
             color: #FFFFFF;
-            text-decoration: none;
-        }
-        a:hover {
-            border-bottom: 3px solid #00cc99;
         }
     }
     .content {
         display: flex;
         flex-flow: column;
+        flex-wrap: nowrap;
         align-items: center;
         text-align: center;
         width: 460px;
@@ -79,6 +102,50 @@ body {
 
 @media (max-width: 767px) {
     //iPhone
+    #header {
+        background-image: url(../img/header_mobile.png);
+        .navbar {
+            .menu {
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-width 2s;
+                position: absolute;
+                z-index: 100;
+                top: 57px;
+                left: 0;
+                right: 0;
+                li {
+                    display: block;
+                    margin-left: 0;
+                    background: rgba(62, 53, 54, 0.8);
+                    border-bottom: 0.5px dashed rgba(255, 255, 255, 0.2);
+                }
+                a {
+                    width: 100%;
+                    height: 100%;
+                    padding: 15px;
+                }
+            }
+            .showmenu {
+                display: block;
+            }
+        }
+        .navbar.memushow {
+            .menu {
+                max-height: 500px;
+            }
+        }
+        .content {
+            width: 300px;
+            height: 190px;
+            h2 {
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 16px;
+            }
+        }
+    }
 }
 
 
@@ -149,6 +216,19 @@ body {
 
 @media (max-width: 767px) {
     //iPhone
+    #feature {
+        .feature-header {
+            .hr {
+                display: none;
+            }
+        }
+        .feature-content {
+            .card {
+                width: 260px;
+                padding-top: 30px;
+            }
+        }
+    }
 }
 
 
@@ -198,6 +278,17 @@ body {
 
 @media (max-width: 767px) {
     //iPhone
+    #chef {
+        flex-wrap: wrap;
+        padding-left: 0;
+        .chef-avatar {
+            width: 100%;
+        }
+        .chef-content {
+            width: 260px;
+            margin: 30px auto;
+        }
+    }
 }
 
 
@@ -214,6 +305,7 @@ body {
     }
     .cardlist {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         margin-top: 32px;
         .card {
@@ -251,7 +343,6 @@ body {
             .card {
                 width: 235px;
                 .card-body {
-                    align-self: flex-end;
                     width: 155px;
                 }
             }
@@ -261,6 +352,16 @@ body {
 
 @media (max-width: 767px) {
     //iPhone
+    #feedback {
+        .cardlist {
+            .card {
+                width: 300px;
+                .card-body {
+                    width: 220px;
+                }
+            }
+        }
+    }
 }
 
 
@@ -277,6 +378,7 @@ body {
     }
     .map-content {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         margin-top: 38px;
     }
@@ -288,7 +390,6 @@ body {
         background-repeat: no-repeat;
         width: 460px;
         height: 386px;
-
         margin-right: 20px;
     }
     .form {
@@ -356,15 +457,21 @@ body {
             height: 386px;
         }
         .form {
-           
-                max-width: 363px;
-            
+            max-width: 363px;
         }
     }
 }
 
 @media (max-width: 767px) {
     //iPhone
+    #map {
+        .location {
+            margin-right: 0;
+        }
+        .form {
+            margin-top: 30px;
+        }
+    }
 }
 
 
@@ -372,6 +479,7 @@ body {
 
 #footer {
     display: flex;
+    flex-wrap: wrap;
     background-color: #efe9e7;
     padding: 50px 42px 50px 43px;
     h2 {
@@ -425,7 +533,6 @@ body {
 
 @media (max-width: 768px) {
     //iPad
-
     #footer {
         padding: 50px 10px 50px 11px;
         .aboutus {
@@ -436,4 +543,17 @@ body {
 
 @media (max-width: 767px) {
     //iPhone
+    #footer {
+        .aboutus {
+            width: 299px;
+        }
+        .Contact {
+            margin-top: 30px;
+        }
+        .iconlist {
+            margin-top: 30px;
+            text-align: right;
+            width: 100%;
+        }
+    }
 }
