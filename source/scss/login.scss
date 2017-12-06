@@ -1,0 +1,108 @@
+@import 'reset';
+@import 'font-awesome';
+@import 'Common';
+
+/* ========================================= */
+
+#loginform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+    background-color: #efe9e7;
+    .title {
+        text-align: center;
+        h1 {
+            font-family: NotoSansCJKtc-Black;
+            font-size: 48px;
+            font-weight: bold;
+            color: #3D1101;
+        }
+        p {
+            font-family: NotoSansCJKtc-Medium;
+            font-size: 20px;
+            color: #3D1101;
+        }
+    }
+    .card {
+        width: 300px;
+        height: 273px;
+        border-top: 3px solid #FF5E45;
+        background: #EFE9E7;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+        margin-top: 35px;
+        .card-header {
+            text-align: center;
+            margin-top: 15px;
+            h2 {
+                font-family: NotoSansCJKtc-Black;
+                font-size: 18px;
+                color: #3D1101;
+                font-weight: 900;
+            }
+        }
+        .card-body {
+            padding: 15px;
+            label {
+                display: block;
+                font-family: MicrosoftJhengHeiRegular;
+                font-size: 16px;
+                color: #3D1101;
+                margin-bottom: 3px;
+            }
+            input {
+                position: relative;
+                width: 100%;
+                font-size: 16px;
+                background: #FFFFFF;
+                border: 1px solid #CCCCCC;
+                box-shadow: inset 0px 1px 0px 0px #ECECEC;
+                border-radius: 3px;
+                padding: 6px 0 6px 28px;
+            }
+            .row {
+                position: relative;
+                .icon {
+                    position: absolute;
+                    top: 26px;
+                    left: 9px;
+                    font-size: 16px;
+                    z-index: 10;
+                    color: rgba(61, 17, 1, 0.5);
+                }
+            }
+            #email {
+                margin-bottom: 15px;
+            }
+            p {
+                font-family: MicrosoftJhengHeiRegular;
+                font-size: 14px;
+                color: #FF5E45;
+            }
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+        #b_register {
+            width: 125px;
+            height: 32px;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 3px;
+            font-family: PingFangTC-Regular;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        #b_login {
+            width: 125px;
+            height: 32px;
+            background: #F56C23;
+            border-radius: 3px;
+            font-family: PingFangTC-Regular;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    }
+}
