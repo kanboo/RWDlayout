@@ -1,0 +1,127 @@
+@import 'reset';
+@import 'font-awesome';
+@import 'Common';
+
+/* ========================================= */
+
+#main {
+    display: flex;
+    padding: 50px;
+    background-color: #f6f4f3;
+    color: #3D1101;
+    .sidebar {
+        max-width: 220px;
+        i {
+            font-size: 26px;
+            padding-left: 5px;
+        }
+        h2 {
+            display: inline-block;
+            font-family: MicrosoftJhengHeiRegular;
+            font-size: 20px;
+            color: #3D1101;
+            line-height: 32px;
+            margin-left: 15px;
+        }
+        ul {
+            li {
+                font-family: MicrosoftJhengHeiRegular;
+                font-size: 16px;
+                color: #3D1101;
+                line-height: 32px;
+                border-bottom: 1px solid #3D1101;
+                padding-left: 5px;
+                &.active {
+                    color: white;
+                    background: #3D1101;
+                }
+            }
+        }
+    }
+    .container {
+        width: 700px;
+        margin-left: 20px;
+        .header {
+            display: flex;
+            width: 100%;
+            .searchbar {
+                position: relative;
+                width: 460px;
+                input {
+                    font-size: 16px;
+                    padding: 5px 40px 5px 5px;
+                    width: 100%;
+                    border: 2px solid #3D1101;
+                }
+                a {
+                    position: absolute;
+                    color: white;
+                    background: #3D1101;
+                    font-size: 23px;
+                    padding: 3px 5px;
+                    top: 0px;
+                    right: 0px;
+                }
+            }
+            .navigation {
+                margin-left: auto;
+                li {
+                    display: inline-block;
+                    font-family: MicrosoftJhengHeiRegular;
+                    font-size: 16px;
+                    line-height: 32px;
+                    padding-right: 12px; // border-right: 1px solid #3D1101;
+                    color: #3D1101;
+                    i {
+                        font-size: 29px;
+                    }
+                }
+            }
+        }
+        .foodlist {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 26px;
+            .card {
+                width: 220px;
+                height: 280px;
+                background: #EFE9E7;
+                box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+                .card-header {
+                    width: 220px;
+                    height: 120px;
+                    background-image: url(../img/product_1.png);
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                .card-body {
+                    text-align: center;
+                    padding-top: 11px;
+                    padding-bottom: 16px;
+                    h2 {
+                        font-family: MicrosoftJhengHeiRegular;
+                        font-size: 20px;
+                        color: #3D1101;
+                    }
+                    p {
+                        font-family: MicrosoftJhengHeiRegular;
+                        font-size: 12px;
+                        color: #3D1101;
+                    }
+                    hr {
+                        width: 91px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .card-footer {
+                    a {
+                        
+                        border: 2px solid #FF5E45;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
