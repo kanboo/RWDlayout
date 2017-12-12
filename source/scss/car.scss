@@ -6,207 +6,305 @@
 
 #main {
     display: flex;
+    flex-wrap: wrap;
     padding: 50px;
     background-color: #f6f4f3;
     color: #3D1101;
-    .sidebar {
-        max-width: 220px;
-        i {
-            font-size: 26px;
-            padding-left: 5px;
-        }
-        h2 {
-            display: inline-block;
+}
+
+@media (max-width: 768px) {
+    //iPad
+    #main {
+        padding: 50px 34px;
+    }
+}
+
+@media (max-width: 767px) {
+    //iPhone
+    #main {
+        padding: 50px 10px;
+    }
+}
+
+
+/* 側邊選單 */
+
+.sidebar {
+    width: 200px;
+    i {
+        font-size: 26px;
+        padding-left: 5px;
+    }
+    h2 {
+        display: inline-block;
+        font-family: MicrosoftJhengHeiRegular;
+        font-size: 20px;
+        color: #3D1101;
+        line-height: 32px;
+        margin-left: 15px;
+    }
+    ul {
+        li {
             font-family: MicrosoftJhengHeiRegular;
-            font-size: 20px;
+            font-size: 16px;
             color: #3D1101;
             line-height: 32px;
-            margin-left: 15px;
+            border-bottom: 1px solid #3D1101;
+            padding-left: 5px;
+            &.active {
+                color: white;
+                background: #3D1101;
+            }
         }
-        ul {
+    }
+}
+
+@media (max-width: 768px) {
+    //iPad
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    //iPhone
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+/* 食物列表 */
+
+.container {
+    width: 700px;
+    margin-left: 20px;
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .searchbar {
+            position: relative;
+            width: 460px;
+            input {
+                font-size: 16px;
+                padding: 5px 40px 5px 5px;
+                width: 100%;
+                border: 2px solid #3D1101;
+            }
+            a {
+                position: absolute;
+                color: white;
+                background: #3D1101;
+                font-size: 23px;
+                padding: 3px 5px;
+                top: 0px;
+                right: 0px;
+            }
+        }
+        .navigation {
+            margin-left: auto;
             li {
+                position: relative;
+                display: inline-block;
                 font-family: MicrosoftJhengHeiRegular;
                 font-size: 16px;
+                padding-right: 12px;
                 color: #3D1101;
-                line-height: 32px;
-                border-bottom: 1px solid #3D1101;
-                padding-left: 5px;
-                &.active {
-                    color: white;
-                    background: #3D1101;
+                &:not(:last-child) {
+                    border-right: 1px solid #3D1101;
+                    margin-right: 10px;
+                }
+                i {
+                    font-size: 29px;
+                }
+                #purchasequantity {
+                    position: absolute;
+                    display: inline-block;
+                    padding: 4px 7px;
+                    font-size: 12px;
+                    line-height: 1;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: #fff;
+                    background-color: #FF5E45;
+                    top: -5px;
+                    right: 5px;
                 }
             }
         }
     }
-    .container {
-        width: 700px;
-        margin-left: 20px;
-        .header {
+    .foodlist {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 26px;
+        .card {
             display: flex;
-            width: 100%;
-            .searchbar {
-                position: relative;
-                width: 460px;
-                input {
-                    font-size: 16px;
-                    padding: 5px 40px 5px 5px;
-                    width: 100%;
-                    border: 2px solid #3D1101;
+            flex-direction: column;
+            position: relative;
+            width: 220px;
+            height: 280px;
+            background: #EFE9E7;
+            box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+            &:nth-child( n + 4) {
+                margin-top: 30px;
+            }
+            &:nth-child( 3n + 2),
+            &:nth-child( 3n + 3) {
+                margin-left: 20px;
+            }
+            .card-header {
+                width: 220px;
+                height: 120px;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .card-body {
+                text-align: center;
+                padding-top: 11px;
+                padding-bottom: 16px;
+                h2 {
+                    font-family: MicrosoftJhengHeiRegular;
+                    font-size: 20px;
+                    color: #3D1101;
                 }
-                a {
-                    position: absolute;
-                    color: white;
-                    background: #3D1101;
-                    font-size: 23px;
-                    padding: 3px 5px;
-                    top: 0px;
-                    right: 0px;
+                p {
+                    font-family: MicrosoftJhengHeiRegular;
+                    font-size: 12px;
+                    color: #3D1101;
+                }
+                hr {
+                    width: 91px;
+                    margin-bottom: 20px;
                 }
             }
-            .navigation {
-                margin-left: auto;
-                li {
+            .card-footer {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-top: auto;
+                margin-bottom: 10px;
+                a {
+                    display: block;
+                    width: 200px;
+                    height: 28px;
+                    color: #FF5E45;
+                    border: 2px solid #FF5E45;
+                    border-radius: 3px;
+                    text-decoration: none;
+                }
+            }
+            /* 愛心 */
+            .tag-icon {
+                position: absolute;
+                top: 9px;
+                left: 9px;
+                .fa {
+                    font-size: 23px;
+                    font-weight: bold;
+                    color: #fff;
+                }
+            }
+            /* 緞帶 */
+            //緞帶效果
+            .tag-wrap {
+                $p: 5px;
+                $size: 45px;
+                position: absolute; //位移要超出原有的框架，才能做出緞帶效果
+                top: -$p;
+                right: -$p; //超出的部份隱藏
+                overflow: hidden;
+                width: $size * 2;
+                height: $size * 2; //查看位置
+                //border: 1px solid blue;
+                .tag {
                     position: relative;
-                    display: inline-block;
-                    font-family: MicrosoftJhengHeiRegular;
-                    font-size: 16px;
-                    padding-right: 12px;
-                    color: #3D1101;
-                    &:not(:last-child) {
-                        border-right: 1px solid #3D1101;
-                        margin-right: 10px;
+                    width: 130px;
+                    background-color: #00CC99;
+                    padding-top: 0.25rem;
+                    padding-bottom: 0.25rem;
+                    text-align: center;
+                    margin-top: -$p * 2;
+                    color: white; //rotate為旋轉、translate為移動、skew為傾斜、scale為縮放
+                    //transform: translateX(50%) rotate(45deg) translateY(150%); //查看位置
+                    transform: translateX(22%) rotate(45deg) translateY(178%); //border: 1px solid red;
+                    &:before {
+                        content: "";
+                        position: absolute; //利用 加粗邊框 + 邊框上方顏色，達到小三角的效果
+                        border: $p solid transparent;
+                        border-top-color: darken(#00CC99, 15%);
+                        bottom: -10px;
+                        left: 6px;
                     }
-                    i {
-                        font-size: 29px;
-                    }
-                    #purchasequantity {
-                        position: absolute;
-                        display: inline-block;
-                        padding: 4px 7px;
-                        font-size: 12px;
-                        line-height: 1;
-                        text-align: center;
-                        border-radius: 50%;
-                        color: #fff;
-                        background-color: #FF5E45;
-                        top: -5px;
-                        right: 5px;
+                    &:after {
+                        content: "";
+                        position: absolute; //利用 加粗邊框 + 邊框上方顏色，達到小三角的效果
+                        border: $p solid transparent;
+                        border-top-color: darken(#00CC99, 15%);
+                        bottom: -10px;
+                        right: 14px;
                     }
                 }
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    //iPad
+    .container {
+        margin-top: 23px;
+        margin-left: 0;
+        .header {
+            .searchbar {
+                width: 100%;
+            }
+            .navigation {
+                margin-top: 20px;
+            }
+        }
         .foodlist {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 26px;
-            .card {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                width: 220px;
-                height: 280px;
-                background: #EFE9E7;
-                box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+            .cardXX {
+                // width: 100%;
                 &:nth-child( n + 4) {
                     margin-top: 30px;
                 }
                 &:nth-child( 3n + 2),
                 &:nth-child( 3n + 3) {
-                    margin-left: 20px;
-                }
+                    margin-left: 10px;
+                } // margin-top: 30px;
                 .card-header {
-                    width: 220px;
-                    height: 120px; //background-image: url(../img/product_1.png);
-                    background-position: center center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
+                    // width: 100%;
                 }
-                .card-body {
-                    text-align: center;
-                    padding-top: 11px;
-                    padding-bottom: 16px;
-                    h2 {
-                        font-family: MicrosoftJhengHeiRegular;
-                        font-size: 20px;
-                        color: #3D1101;
-                    }
-                    p {
-                        font-family: MicrosoftJhengHeiRegular;
-                        font-size: 12px;
-                        color: #3D1101;
-                    }
-                    hr {
-                        width: 91px;
-                        margin-bottom: 20px;
-                    }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    //iPhone
+    .container {
+        margin-top: 23px;
+        margin-left: 0;
+        .header {
+            .searchbar {
+                width: 100%;
+            }
+            .navigation {
+                margin-top: 20px;
+            }
+        }
+        .foodlist {
+            .card {
+                width: 100%;
+                &:nth-child( 3n + 2),
+                &:nth-child( 3n + 3) {
+                    margin-left: 0;
                 }
-                .card-footer {
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    margin-top: auto;
-                    margin-bottom: 10px;
-                    a {
-                        display: block;
-                        width: 200px;
-                        height: 28px;
-                        color: #FF5E45;
-                        border: 2px solid #FF5E45;
-                        border-radius: 3px;
-                        text-decoration: none;
-                    }
-                }
-                /* 愛心 */
-                .tag-icon {
-                    position: absolute;
-                    top: 9px;
-                    left: 9px;
-                    .fa {
-                        font-size: 23px;
-                        font-weight: bold;
-                        color: #fff;
-                    }
-                }
-                /* 緞帶 */
-                //緞帶效果
-                .tag-wrap {
-                    $p: 5px;
-                    $size: 45px;
-                    position: absolute; //位移要超出原有的框架，才能做出緞帶效果
-                    top: -$p;
-                    right: -$p; //超出的部份隱藏
-                    overflow: hidden;
-                    width: $size * 2;
-                    height: $size * 2; //查看位置
-                    //border: 1px solid blue;
-                    .tag {
-                        position: relative;
-                        width: 130px;
-                        background-color: #00CC99;
-                        padding-top: 0.25rem;
-                        padding-bottom: 0.25rem;
-                        text-align: center;
-                        margin-top: -$p * 2;
-                        color: white; //rotate為旋轉、translate為移動、skew為傾斜、scale為縮放
-                        //transform: translateX(50%) rotate(45deg) translateY(150%); //查看位置
-                        transform: translateX(22%) rotate(45deg) translateY(178%); //border: 1px solid red;
-                        &:before {
-                            content: "";
-                            position: absolute; //利用 加粗邊框 + 邊框上方顏色，達到小三角的效果
-                            border: $p solid transparent;
-                            border-top-color: darken(#00CC99, 15%);
-                            bottom: -10px;
-                            left: 6px;
-                        }
-                        &:after {
-                            content: "";
-                            position: absolute; //利用 加粗邊框 + 邊框上方顏色，達到小三角的效果
-                            border: $p solid transparent;
-                            border-top-color: darken(#00CC99, 15%);
-                            bottom: -10px;
-                            right: 14px;
-                        }
-                    }
+                margin-top: 30px;
+                .card-header {
+                    width: 100%;
                 }
             }
         }
