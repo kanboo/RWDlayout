@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/car.css">
+    <title>Car</title>
+</head>
+
+<body>
+
+    <div class="warp">
+
+        <header id="header">
+            <nav class="navbar">
+                <img id="logo_w" src="img/logo_w(null).svg" alt="logo_w">
+                <ul class="menu">
+                    <li>
+                        <a href="#feature">特色</a>
+                    </li>
+                    <li>
+                        <a href="#chef">主廚</a>
+                    </li>
+                    <li>
+                        <a href="#map">地圖</a>
+                    </li>
+                </ul>
+                <a href="#" class="showmenu">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a>
+            </nav>
+            <div class="content">
+                <h2 class="hidden-xs">咬一口就無法忘懷的漢堡</h2>
+                <h2 class="visible-xs">咬一口</h2>
+                <h2 class="visible-xs"> 就無法忘懷的漢堡</h2>
+
+                <p>七夕絕對無法錯過的好滋味
+                    <br> 六角大漢堡
+                </p>
+            </div>
+        </header>
+
+
+
+        <article id="main">
+
+            <!-- 側邊選單 -->
+            <section class="sidebar">
+                <i class="fa fa-leaf" aria-hidden="true"></i>
+                <h2>線上訂購美食</h2>
+
+                <ul>
+                    <li>全部 (23)</li>
+                    <li>只愛吃薯條 (18)</li>
+                    <li>加熱就可食 (1)</li>
+                    <li class="active">不敗漢堡系列 (4)</li>
+                </ul>
+
+            </section>
+
+            <!-- 食物列表 -->
+            <section class="container">
+                <div class="header">
+                    <div class="searchbar">
+                        <input type="text" name="search" id="search">
+                        <a class="btn" href="#">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="navigation">
+                        <ul>
+                            <li>結帳去</li>
+                            <li>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span id="purchasequantity">1</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="foodlist">
+
+                    <!-- 經典漢堡套餐 -->
+                    <div class="card">
+
+                        <!--  不影響結構  -->
+                        <div class="tag-icon">
+
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="tag-wrap">
+                            <div class="tag">
+                                熱銷美食
+                            </div>
+                        </div>
+
+
+                        <!--  主要結構  -->
+                        <div class="card-header" style="background-image: url(../img/product_1.png);">
+                        </div>
+                        <div class="card-body">
+                            <h2>經典漢堡套餐</h2>
+                            <p>Classic Hamburger Package</p>
+                            <hr>
+                            <h2>$120</h2>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">
+                                <p>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入購物車
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 英俊香腸 -->
+                    <div class="card">
+
+                        <!--  不影響結構  -->
+                        <div class="tag-icon">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        </div>
+
+                        <!--  主要結構  -->
+                        <div class="card-header" style="background-image: url(../img/product_2.png);">
+                        </div>
+                        <div class="card-body">
+                            <h2>英俊香腸</h2>
+                            <p>Handsome Sausage</p>
+                            <hr>
+                            <h2>$1,024</h2>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">
+                                <p>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入購物車
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 漢堡兄弟 -->
+                    <div class="card">
+
+                        <!--  不影響結構  -->
+                        <div class="tag-icon">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        </div>
+
+                        <!--  主要結構  -->
+                        <div class="card-header" style="background-image: url(../img/product_3.png);">
+                        </div>
+                        <div class="card-body">
+                            <h2>漢堡兄弟</h2>
+                            <p>Hamburg Brothers</p>
+                            <hr>
+                            <h2>$792</h2>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">
+                                <p>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入購物車
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 完美願望 -->
+                    <div class="card">
+
+                        <!--  不影響結構  -->
+                        <div class="tag-icon">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
+
+                        <!--  主要結構  -->
+                        <div class="card-header" style="background-image: url(../img/product_4.png);">
+                        </div>
+                        <div class="card-body">
+                            <h2>完美願望</h2>
+                            <p>Dragon Ball Package</p>
+                            <hr>
+                            <h2>$999,999</h2>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">
+                                <p>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入購物車
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </article>
+
+
+
+
+        <footer id="footer">
+
+            <div class="row aboutus">
+                <h2>關於 六角西餐廳</h2>
+                <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis
+                    nibh lacinia at. </p>
+            </div>
+
+            <div class="row Contact">
+                <h2>聯絡方式</h2>
+                <ul>
+                    <li>
+                        高雄市中正五路到底
+                    </li>
+                    <li>
+                        +886 886 886
+                    </li>
+                    <li>
+                        service@hexschool.com
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row iconlist">
+                <img src="img/logo_l(null).svg" alt="">
+                <div class="linklist">
+                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+</body>
+
+</html>
